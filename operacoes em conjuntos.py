@@ -55,34 +55,28 @@ def produtoCartesiano(conj1, conj2):
 
 
 #União Disjunta
-def uniaoDisjunta(conj1, conj2):
+def uniaoDisjunta(conjunto1, conjunto2):
     C = []
     D = []
     E = []
-    F = []
-    for a in conj1:
+    for a in conjunto1:
         C.append(a)
+        C.append('conjunto1')
         D.append(C)
         C = []
-    for b in conj2:
+    for b in conjunto2:
         E.append(b)
-        F.append(E)
+        E.append('conjunto2')
+        D.append(E)
         E = []
-    for c in D:
-        c.append('Silva')
-        C.append(c)
-    for d in F:
-        d.append('Souza')
-        E.append(d)
-    C.append(E)
-    return C
+    return D
 
     
 A = {1,2,3}
 B = {3,2,4}
 
-Silva = {'Joao', 'Maria', 'Jose'}
-Souza = {'Pedro', 'Ana', 'Jose'}
+conjunto1 = {'Joao', 'Maria', 'Jose'}
+conjunto2 = {'Pedro', 'Ana', 'Jose'}
 
 print('União: ',uniao(A,B))
 
@@ -95,6 +89,7 @@ print('Diferença: ',diferenca(A,B))
 print('Conjunto das Partes: ',conjuntoDasPartes(A))
 
 print('Produto Cartesiano: ')
+
 produtoCartesiano(A,B)
 
-print('União Disjunta: \n',uniaoDisjunta(Silva,Souza))
+print('União Disjunta: \n',uniaoDisjunta(conjunto1,conjunto2))
